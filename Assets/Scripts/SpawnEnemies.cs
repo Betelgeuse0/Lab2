@@ -36,6 +36,7 @@ public class SpawnEnemies : MonoBehaviour
             Vector3 camPos = mainCamera.transform.position;
         
             GameObject clone = Instantiate(enemy);
+            clone.SetActive(true);
             float xPos = Random.Range(camPos.x - 8, camPos.x + 8);
             clone.transform.position = camPos + new Vector3(xPos, -10, -6);
             ++enemyCount;

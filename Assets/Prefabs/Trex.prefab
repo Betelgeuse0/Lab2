@@ -15,13 +15,14 @@ GameObject:
   - component: {fileID: 5562016669899970375}
   - component: {fileID: 5562016669899970372}
   - component: {fileID: 5562016669899970373}
+  - component: {fileID: 8417168147379547583}
   m_Layer: 0
   m_Name: Trex
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5562016669899970374
 Transform:
   m_ObjectHideFlags: 0
@@ -136,3 +137,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 25
+--- !u!114 &8417168147379547583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5562016669899970370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ac817eb27acaf74386e81f38545bb9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
