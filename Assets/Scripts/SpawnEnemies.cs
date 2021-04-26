@@ -1,6 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class SpawnEnemies : MonoBehaviour
 {
@@ -37,8 +40,15 @@ public class SpawnEnemies : MonoBehaviour
         
             GameObject clone = Instantiate(enemy);
             clone.SetActive(true);
-            float xPos = Random.Range(camPos.x - 8, camPos.x + 8);
-            clone.transform.position = camPos + new Vector3(xPos, -9, -6);
+            
+            float xPos = Random.Range(-20, 20);
+            float zPos;
+            if (Mathf.Abs(xPos) >= 10)
+                zPos = Random.Range(-20, 20);
+            else
+                zPos = Random.Range(10, 20) * Mathf.Sign(Random.Range(-2, 1));
+
+            clone.transform.position = camPos + new Vector3(xPos, -9, zPos);
             ++enemyCount;
             Debug.Log("Spawned Enemy");
             yield return new WaitForSeconds(waitTime);
