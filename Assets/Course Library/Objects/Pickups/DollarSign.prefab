@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  gameOverText: {fileID: 0}
 --- !u!114 &606859546
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -51,6 +51,8 @@ public class SpawnEnemies : MonoBehaviour
             clone.transform.position = camPos + new Vector3(xPos, -9, zPos);
             ++enemyCount;
             Debug.Log("Spawned Enemy");
+            if (waitTime > 0.5f)
+                waitTime -= 0.001f;
             yield return new WaitForSeconds(waitTime);
         }
     }
