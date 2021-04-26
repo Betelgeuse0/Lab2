@@ -3,15 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FollowPlayer : MonoBehaviour
+public class FollowCookie : MonoBehaviour
 {
     private Rigidbody rb;
     private GameObject cookie;
     private bool touchedPlayer = false;
-
     public bool TouchedPlayer => touchedPlayer;
-
     public float speed = 10.0f;
+
+    public GameObject gameOverText;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +40,7 @@ public class FollowPlayer : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
             Destroy(gameObject);
-            //touchedPlayer = true;
+        else if (other.gameObject.tag == "Cookie")
+            gameOverText.SetActive(true);
     }
 }
