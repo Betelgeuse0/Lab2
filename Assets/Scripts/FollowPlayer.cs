@@ -6,8 +6,7 @@ using UnityEngine;
 public class FollowPlayer : MonoBehaviour
 {
     private Rigidbody rb;
-    private GameObject player;
-    private PlayerController playerScript;
+    private GameObject cookie;
     private bool touchedPlayer = false;
 
     public bool TouchedPlayer => touchedPlayer;
@@ -17,8 +16,7 @@ public class FollowPlayer : MonoBehaviour
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
-        player = GameObject.Find("Player");
-        playerScript = player.GetComponent<PlayerController>();
+        cookie = GameObject.Find("Cookie");
     }
 
     // Update is called once per frame
@@ -31,7 +29,7 @@ public class FollowPlayer : MonoBehaviour
             touchedPlayer = false;
         }
         
-        Vector3 vel = playerScript.Rb.position - rb.position;
+        Vector3 vel = cookie.transform.position - transform.position;
         vel.Normalize();
         vel *= speed;
         
@@ -41,6 +39,7 @@ public class FollowPlayer : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "Player")
-            touchedPlayer = true;
+            Destroy(gameObject);
+            //touchedPlayer = true;
     }
 }
